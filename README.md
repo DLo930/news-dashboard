@@ -1,8 +1,13 @@
-<div style="text-align:center">
+<div align="center">
   <img src="assets/icon.png" width="100" />
   <h2>Today's Headlines</h2>
 </div>
-Personal news dashboard built on <a href="https://electron-react-boilerplate.js.org/">Electron React Boilerplate</a> with data from Hacker News, NY Times, and HLTV. Beware: code smells for days in this repo but, hey, gotta move fast.
+
+<p>A small personal news dashboard built on <a href="https://electron-react-boilerplate.js.org/">Electron React Boilerplate</a> with data from Hacker News, NY Times, and HLTV. Beware: code smells for days in this repo but, hey, gotta move fast. Here's a peek:</p>
+
+<div align="center">
+  <img src="assets/dashboard-preview.jpg" width="85%" margin="0 50px" />
+</div>
 
 ### Secrets
 Create a file `.env` at the project root and add the following to it:
