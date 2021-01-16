@@ -1,0 +1,21 @@
+{
+  "name": "news-dashboard",
+  "productName": "Today's Headlines",
+  "version": "0.0.1",
+  "description": "Electron application aggregating headlines from various news sources",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Dennis Lo",
+    "email": "dennislo930@gmail.com",
+    "url": "https://github.com/DLo930"
+  },
+  "scripts": {
+    "electron-rebuild": "node -r ../.erb/scripts/BabelRegister.js ../.erb/scripts/ElectronRebuild.js",
+    "postinstall": "yarn electron-rebuild"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,33 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@import "~rsuite/dist/styles/rsuite-dark";
+ 
+html {
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: dodgerblue;
+  border-radius: 0.5vw;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+}
