@@ -60,11 +60,13 @@ class NYTPopular extends React.Component {
   }
 
   getThumbnail = (story) => {
-    for (const img of story.media[0]["media-metadata"]) {
-      if (img.format === "mediumThreeByTwo210") {
-        return (
-          <img src={img.url} alt={story.media[0].caption} style={{ width: "100%" }} />
-        );
+    for (var i = 0; i < story.media.length; i++) {
+      for (const img of story.media[i]["media-metadata"]) {
+        if (img.format === "mediumThreeByTwo210") {
+          return (
+            <img src={img.url} alt={story.media[0].caption} style={{ width: "100%" }} />
+          );
+        }
       }
     }
 
