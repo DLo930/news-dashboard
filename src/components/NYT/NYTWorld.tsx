@@ -6,9 +6,9 @@ import {
   FlexboxGrid, Col, Whisper, Tooltip
 } from 'rsuite';
 
-const LIMIT = (process.env.NODE_ENV === "production") ? 12 : 7;
+const LIMIT = (process.env.NODE_ENV === "development") ? 7 : 12;
 
-class NYTHome extends React.Component {
+class NYTWorld extends React.Component {
   constructor(props) {
     super(props);
 
@@ -18,7 +18,7 @@ class NYTHome extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`)
+    fetch(`https://api.nytimes.com/svc/topstories/v2/world.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`)
       .then(res => {
         if (!res.ok) {
           this.props.badResponse("NYT");
@@ -61,7 +61,7 @@ class NYTHome extends React.Component {
 
   getThumbnail = (story) => {
     for (const img of story.multimedia) {
-      if (img.format === "Normal") {
+      if (img.format === "mediumThreeByTwo210") {
         return (
           <img src={img.url} alt={img.caption} style={{ width: "100%" }} />
         );
@@ -74,8 +74,8 @@ class NYTHome extends React.Component {
   getStoryHeader = (story) => {
     return (
       <div>
-        <a href={story.url} target="_blank">{story.title}</a>&nbsp;&nbsp;<Tag>{story.section + ((story.subsection === "") ? "" : `: ${story.subsection}`)}</Tag><br />
-        <Whisper placement="top" trigger="hover" speaker={<Tooltip>{new Date(story.published_date).toLocaleString()}</Tooltip>}>
+        <a href={story.url} target="_blank">{story.title}</a>&nbsp;&nbsp;<Tag>{story.subsection}</Tag><br />
+        <Whisper placement="top" trigger="hover" speaker={<Tooltip>{new Date(story.published_date).toLocaleDateString()}</Tooltip>}>
           <small style={{ color: "#a4a9b3" }}>{this.timeAgo(story.published_date)}</small>
         </Whisper>
       </div>
@@ -85,7 +85,7 @@ class NYTHome extends React.Component {
   render() {
     const header = (
       <div>
-        <b><Icon icon="newspaper-o" size="lg" />&nbsp;&nbsp;Home</b><br />
+        <b><Icon icon="globe" size="lg" style={{ color: "dodgerblue" }} />&nbsp;&nbsp;World</b>
       </div>
     );
 
@@ -110,4 +110,4 @@ class NYTHome extends React.Component {
   }
 }
 
-export default NYTHome;
+export default NYTWorld;

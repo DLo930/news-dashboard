@@ -12,7 +12,6 @@ import {
 import Topbar from './components/Topbar';
 import HackerNews from './components/HackerNews';
 import NYT from './components/NYT/NYT';
-import HLTV from './components/HLTV/HLTV';
 import Lowbar from './components/Lowbar';
 
 const ALERT_LEN = 3000;
@@ -39,7 +38,6 @@ const Root = () => {
         <PanelGroup accordion>
           <HackerNews badResponse={badResponse} fetchError={fetchError} />
           <NYT badResponse={badResponse} fetchError={fetchError} />
-          <HLTV badResponse={badResponse} fetchError={fetchError} />
         </PanelGroup>
       </Content>
       <Footer>

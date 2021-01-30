@@ -76,9 +76,9 @@ class NYTPopular extends React.Component {
   getStoryHeader = (story) => {
     return (
       <div>
-        <a href={story.url} target="_blank">{story.title}</a><br />
+        <a href={story.url} target="_blank">{story.title}</a>&nbsp;&nbsp;<Tag>{story.section + ((story.subsection === "") ? "" : `: ${story.subsection}`)}</Tag><br />
         <Whisper placement="top" trigger="hover" speaker={<Tooltip>{new Date(story.published_date).toLocaleDateString()}</Tooltip>}>
-          <small>{this.timeAgo(story.published_date)}</small>
+          <small style={{ color: "#a4a9b3" }}>{this.timeAgo(story.published_date)}</small>
         </Whisper>
       </div>
     )
@@ -87,7 +87,7 @@ class NYTPopular extends React.Component {
   render() {
     const header = (
       <div>
-        <b><Icon icon="twinkle-star" size="lg" style={{ color: "gold" }} />&nbsp;&nbsp;Most viewed (past 24 hours)</b>
+        <b><Icon icon="twinkle-star" size="lg" style={{ color: "gold" }} />&nbsp;&nbsp;Popular</b>
       </div>
     );
 
@@ -102,7 +102,6 @@ class NYTPopular extends React.Component {
                   <p>
                     <small>{story.abstract}</small>
                   </p>
-                  <Tag>{story.section + ((story.subsection.length > 0) ? `: ${story.subsection}` : '')}</Tag>
                 </Panel>
               </Panel>
             </FlexboxGrid.Item>

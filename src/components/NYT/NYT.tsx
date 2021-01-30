@@ -5,6 +5,7 @@ import {
 } from 'rsuite';
 import NYTHome from './NYTHome';
 import NYTPopular from './NYTPopular';
+import NYTWorld from './NYTWorld';
 import NYTLogo from '../../../assets/nyt.png';
 
 class NYT extends React.Component {
@@ -25,6 +26,7 @@ class NYT extends React.Component {
       <Panel header={header} collapsible defaultExpanded>
         <NYTHome {...this.props} />
         <NYTPopular {...this.props} />
+        <NYTWorld {...this.props} />
       </Panel>
     );
   }
