@@ -3,7 +3,7 @@
   <h2>Today's Headlines</h2>
 </div>
 
-<p>A small personal news dashboard built on <a href="https://electron-react-boilerplate.js.org/">Electron React Boilerplate</a> with data from Hacker News, NY Times, and Yahoo Finance. Beware: code smells for days in this repo but, hey, gotta move fast. Here's a peek:</p>
+<p>A small personal news dashboard built on <a href="https://electron-react-boilerplate.js.org/">Electron React Boilerplate</a> with some news and weather data. Beware: code smells for days in this repo but, hey, gotta move fast. Here's a peek:</p>
 
 <div align="center">
   <img src="assets/dashboard-preview.jpg" width="85%" margin="0 50px" />
@@ -14,6 +14,7 @@ Create a file `.env` at the project root and add the following to it:
 ```
 REACT_APP_NYT_API_KEY=<NY Times API key>
 REACT_APP_RAPIDAPI_KEY=<RapidAPI key>
+REACT_APP_AIRVISUAL_API_KEY=<AirVisual API key>
 ```
 
 ### Package

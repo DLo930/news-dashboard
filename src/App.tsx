@@ -33,7 +33,7 @@ const Root = () => {
   return (
     <Container>
       <Header>
-        <Topbar />
+        <Topbar badResponse={badResponse} />
       </Header>
       <Content>
         <PanelGroup accordion>
