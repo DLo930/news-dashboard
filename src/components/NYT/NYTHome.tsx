@@ -60,6 +60,10 @@ class NYTHome extends React.Component {
   }
 
   getThumbnail = (story) => {
+    if (!(story && story.multimedia)) {
+      return null;
+    }
+
     for (const img of story.multimedia) {
       if (img.format === "Normal") {
         return (

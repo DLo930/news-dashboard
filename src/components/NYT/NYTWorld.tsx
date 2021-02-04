@@ -6,7 +6,7 @@ import {
   FlexboxGrid, Col, Whisper, Tooltip
 } from 'rsuite';
 
-const LIMIT = (process.env.NODE_ENV === "development") ? 7 : 12;
+const LIMIT = (process.env.NODE_ENV === "development") ? 12 : 12;
 
 class NYTWorld extends React.Component {
   constructor(props) {
@@ -60,6 +60,10 @@ class NYTWorld extends React.Component {
   }
 
   getThumbnail = (story) => {
+    if (!(story && story.multimedia)) {
+      return null;
+    }
+
     for (const img of story.multimedia) {
       if (img.format === "mediumThreeByTwo210") {
         return (
